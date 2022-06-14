@@ -6,7 +6,6 @@ question answering with vector similarity search
 
     git clone https://github.com/deepset-ai/haystack.git
     cd haystack
-    pip install --upgrade pip
     pip install -e .[only-faiss,preprocessing] ## or 'only-faiss-gpu' for the GPU-enabled dependencies
 
 ## Usage
