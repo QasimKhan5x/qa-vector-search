@@ -43,4 +43,4 @@ retriever = DensePassageRetriever(
 )
 
 document_store.update_embeddings(retriever)
-document_store.save("faiss_document_store.db")
+document_store.save("faiss_index.faiss")

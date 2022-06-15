@@ -2,11 +2,11 @@ from haystack.document_stores import FAISSDocumentStore
 from haystack.nodes import DensePassageRetriever, FARMReader
 from haystack.pipelines import ExtractiveQAPipeline
 
-document_store = FAISSDocumentStore(faiss_index_factory_str="Flat")
-document_store.load("faiss_document_store.db")
+doc_store = FAISSDocumentStore(faiss_index_factory_str="Flat")
+doc_store.load("faiss_index.faiss")
 
 retriever = DensePassageRetriever(
-    document_store=document_store,
+    document_store=doc_store,
     query_embedding_model="facebook/dpr-question_encoder-single-nq-base",
     passage_embedding_model="facebook/dpr-ctx_encoder-single-nq-base",
     max_seq_len_query=64,
