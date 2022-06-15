@@ -2,8 +2,8 @@ from haystack.document_stores import FAISSDocumentStore
 from haystack.nodes import DensePassageRetriever, FARMReader
 from haystack.pipelines import ExtractiveQAPipeline
 
-doc_store = FAISSDocumentStore(faiss_index_factory_str="Flat")
-doc_store.load("faiss_index.faiss")
+doc_store = FAISSDocumentStore.load("faiss_index.faiss")
+assert doc_store.faiss_index_factory_str == "Flat"
 
 retriever = DensePassageRetriever(
     document_store=doc_store,
